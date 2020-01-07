@@ -10,6 +10,10 @@
 npm install --save form-control-react
 ```
 
+## Example
+
+[Demo](https://codesandbox.io/s/form-control-react-example-hrxvs)
+
 ## Usage
 
 ### Create config object (can be a separate file to increase readability)
