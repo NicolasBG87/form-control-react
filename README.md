@@ -71,11 +71,11 @@ export default App;
 // CONFIG OBJECT
 {
   fieldName: {
-    disabled: boolean, // should the field be disabled
-    required: boolean, // if the field should be counted when validating the form
-    value: string | number | [] | {} | boolean, // if you want to initially set values to a form
-    valid: boolean, // if you want to intitially manually set validity
-    validators: [ // an array of validator functions
+    disabled?: boolean, // should the field be disabled
+    required?: boolean, // if the field should be counted when validating the form
+    value?: string | number | [] | {} | boolean, // if you want to initially set values to a form
+    valid?: boolean, // if you want to intitially manually set validity
+    validators?: [ // an array of validator functions
       (value) => ({
         valid: value > 0, // validation expression or regex match
         errorMsg: 'Must be higher than 0' // message in case of invalidity
