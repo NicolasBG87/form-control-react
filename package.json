@@ -1,13 +1,21 @@
 {
   "name": "form-control-react",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Control and Validate forms in React",
-  "author": "NicolasBG87",
+  "author": "Nikola Bojanovic",
   "license": "MIT",
   "repository": "NicolasBG87/form-control-react",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "keywords": [
+    "react",
+    "react-hooks",
+    "form",
+    "react-form",
+    "form-control",
+    "form-validation"
+  ],
   "engines": {
     "node": ">=8",
     "npm": ">=5"
