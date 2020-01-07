@@ -12,19 +12,53 @@ npm install --save form-control-react
 
 ## Usage
 
+### Create config object (can be a separate file to increase readability)
+
+```ts
+export const config = {
+  firstName: {
+    required: true,
+    validators: [
+      value => ({
+        valid: value.length > 2,
+        errorMsg: "Must be at least 3 characters long"
+      })
+    ]
+  }
+};
+```
+
+### Implement the hook directly onto native/custom HTML Elements/React Components
+
 ```tsx
-import * as React from 'react'
+import React from "react";
+import { useForm } from "form-control-react";
+import { config } from "./App.config";
 
-import { useMyHook } from 'form-control-react'
+export default const App = () => {
+  const {getFields,handleChange,valid} = useForm(config);
 
-const Example = () => {
-  const example = useMyHook()
+  const { firstName } = getFields();
   return (
-    <div>
-      {example}
-    </div>
-  )
-}
+    <>
+      <form>
+        <div>
+          <label htmlFor="firstName">First Name</label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="firstName"
+            {...firstName}
+          />
+          <span>{firstName.errorMsg}</span>
+        </div>
+      </form>
+      <button disabled={!valid}>Submit</button>
+    </>
+  );
+};
+
+export default App;
 ```
 
 ## License
